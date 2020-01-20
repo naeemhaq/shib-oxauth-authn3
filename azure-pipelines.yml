@@ -21,8 +21,14 @@ steps:
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'build'
 
+- task: DownloadBuildArtifacts@0
+  inputs:
+    buildType: 'current'
+    downloadType: 'single'
+    downloadPath: '$(System.ArtifactsDirectory)'
+
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'shib-oxauth-authn3-4.1.0-SNAPSHOT.zip'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/build/libs/*'
+    ArtifactName: 'drop'
     publishLocation: 'Container'
