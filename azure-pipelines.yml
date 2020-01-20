@@ -24,6 +24,8 @@ steps:
 - task: DownloadBuildArtifacts@0
   inputs:
     buildType: 'current'
+    downloadType: 'specific'
+    itemPattern: '**/build/libs/*jar'
     downloadPath: '$(System.ArtifactsDirectory)'
 
 - task: PublishBuildArtifacts@1
