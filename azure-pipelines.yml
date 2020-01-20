@@ -25,14 +25,6 @@ steps:
     targetPath: '$(Pipeline.Workspace)'
     publishLocation: 'pipeline'
 
-- task: DownloadBuildArtifacts@0
-  inputs:
-    buildType: 'current'
-    downloadType: 'specific'
-    itemPattern: '**/build/libs/*jar'
-    downloadPath: '$(System.ArtifactsDirectory)'
-
-
 - task: UniversalPackages@0
   inputs:
     command: 'publish'
