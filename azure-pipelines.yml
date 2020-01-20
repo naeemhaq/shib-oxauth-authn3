@@ -31,6 +31,6 @@ steps:
     command: 'publish'
     publishDirectory: '$(Pipeline.Workspace)'
     feedsToUsePublish: 'internal'
-    vstsFeedPublish: '804dc0c7-7146-409b-87fd-c5329cee2671'
+    vstsFeedPublish: '32be4b0e-237f-430d-9289-c5966a5c9829/032cde20-7872-4dbd-86db-d0af542b88b7'
     vstsFeedPackagePublish: 'shib-authn3'
     versionOption: 'patch'
