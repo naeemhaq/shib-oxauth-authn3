@@ -32,5 +32,5 @@ steps:
     publishDirectory: '$(Pipeline.Workspace)'
     feedsToUsePublish: 'internal'
     vstsFeedPublish: '32be4b0e-237f-430d-9289-c5966a5c9829/032cde20-7872-4dbd-86db-d0af542b88b7'
-    vstsFeedPackagePublish: 'shib-authn3'
+    vstsFeedPackagePublish: 'shib-oxauth-authn3'
     versionOption: 'patch'
