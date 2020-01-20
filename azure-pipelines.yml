@@ -22,13 +22,14 @@ steps:
     tasks: 'build'
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: '$(Pipeline.Workspace)'
+    targetPath: '$(Pipeline.Workspace)/s/build//s/build/distributions/shib-oxauth-authn3-4.1.0-SNAPSHOT.zip'
+    artifact: 'shib-oxauth-authn3'
     publishLocation: 'pipeline'
 
 - task: UniversalPackages@0
   inputs:
     command: 'publish'
-    publishDirectory: '$(Pipeline.Workspace)'
+    publishDirectory: '$(Pipeline.Workspace)/s/build/distribution/'
     feedsToUsePublish: 'internal'
     vstsFeedPublish: '804dc0c7-7146-409b-87fd-c5329cee2671'
     vstsFeedPackagePublish: 'shib-authn3'
