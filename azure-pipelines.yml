@@ -22,7 +22,7 @@ steps:
     tasks: 'build'
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: '$(Pipeline.Workspace)/s/build//s/build/distributions/shib-oxauth-authn3-4.1.0-SNAPSHOT.zip'
+    targetPath: '$(Pipeline.Workspace)/s/build/distributions/shib-oxauth-authn3-4.1.0-SNAPSHOT.zip'
     artifact: 'shib-oxauth-authn3'
     publishLocation: 'pipeline'
 
