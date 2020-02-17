@@ -10,6 +10,15 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+
+- task: SonarCloudAnalyze@1
+
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'SonarQube'
+    organization: 'nqtech'
+    scannerMode: 'Other'
+
 - task: Gradle@2
   inputs:
     gradleWrapperFile: 'gradlew'
@@ -21,6 +30,10 @@ steps:
     sonarQubeRunAnalysis: true
     sqGradlePluginVersionChoice: 'specify'
     sonarQubeGradlePluginVersion: '2.6.1'
+
+- task: SonarCloudPublish@1
+  inputs:
+    pollingTimeoutSec: '300'
 - task: PublishPipelineArtifact@1
   inputs:
     targetPath: '$(Pipeline.Workspace)/s/build/distributions/'
