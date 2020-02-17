@@ -10,14 +10,13 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-
-- task: SonarCloudAnalyze@1
-
 - task: SonarCloudPrepare@1
   inputs:
     SonarCloud: 'SonarQube'
     organization: 'nqtech'
     scannerMode: 'Other'
+
+- task: SonarCloudAnalyze@1
 
 - task: Gradle@2
   inputs:
